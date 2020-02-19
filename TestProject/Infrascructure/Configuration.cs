@@ -5,13 +5,8 @@ namespace TestProject.Infrascructure
 {
 	public static class Configuration
 	{
-		public static IConfigurationRoot configuration = new ConfigurationBuilder()
-			.SetBasePath(TestContext.CurrentContext.TestDirectory)
-				.AddJsonFile("configuration.json").Build();
-
-		public static string SiteUrl = "https://translate.google.com/";
-		public static string Browser => configuration["BROWSER"];
+		public static string SiteUrl = "https://translate.google.com.ua/";
+		public static string Browser = "Chrome";
 		public const string MobileUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 " +
-											   "(KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";
-	}
+											   "(KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";	}
 }
