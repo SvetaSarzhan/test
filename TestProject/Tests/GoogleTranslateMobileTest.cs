@@ -15,6 +15,7 @@ namespace TestProject.Tests
 
             OpenUrl(Configuration.SiteUrl);
             GoogleTranslatePage googleTranslatePage = new GoogleTranslatePage(ExtendDriver);
+            googleTranslatePage.SelectUkrainianLanguage();
 
             foreach (var item in orininalWord)
             {

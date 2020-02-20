@@ -28,6 +28,7 @@ namespace TestProject.Infrascructure.Browsers
 
 			_chromeOptions.AddArgument("no-sandbox");
 			_chromeOptions.AddArgument("disable-notifications");
+			_chromeOptions.AddArgument("--lang=hi");
 
 			_chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
 

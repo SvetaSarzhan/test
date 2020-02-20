@@ -11,6 +11,8 @@ namespace TestProject.PageObject
         private readonly By _translationLanguageField = By.XPath("//*[@class='tlid-translation translation']/span");
         private readonly By _swapTranslateBtn = By.CssSelector("[class*='jfk-button-narrow']");
         private readonly By _clearOriginalWordBtn = By.CssSelector("[class*='tlid-clear-source-text']");
+        private readonly By _moreLanguageBtn = By.CssSelector("[class*='tl-more']");
+        private readonly By _ukrainianLanguageOption = By.XPath("//*[contains(@class, 'language_list_tl_list')]//*[contains(@class, 'language_list_item_wrapper-uk')]");
         #endregion
 
         public GoogleTranslatePage(Driver driver) : base(driver)
@@ -21,6 +23,13 @@ namespace TestProject.PageObject
         {
             CommonLoggerInfo("");
             Type(_originalLanguageInput, originalWord);            
+        }
+
+        public void SelectUkrainianLanguage()
+        {
+            CommonLoggerInfo("");
+            Click(_moreLanguageBtn);
+            Click(_ukrainianLanguageOption);
         }
 
         private string GettingTranslationFromOriginalWord()
