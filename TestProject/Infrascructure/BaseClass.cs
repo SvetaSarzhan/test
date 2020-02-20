@@ -5,6 +5,7 @@ using Serilog;
 using Serilog.Core;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using TestProject.Infrascructure.Browsers;
 
 namespace TestProject.Infrascructure
@@ -90,11 +91,19 @@ namespace TestProject.Infrascructure
 			return GetAllElementsLocatedBy(locator).Count > 0;
 		}
 
-		protected virtual void WaitForPageLoad()
+		protected void WaitForAnyElementAppiarence(TimeSpan timeout, params By[] bys)
 		{
-			var waitForDocumentReady = new WebDriverWait(Driver, TimeSpan.FromSeconds(1));
-			waitForDocumentReady.Until(wdriver =>
-				((IJavaScriptExecutor)Driver).ExecuteScript("return document.readyState").Equals("complete"));
+			var now = DateTime.Now;
+			var end = now.Add(timeout);
+			while (end.CompareTo(now) == 1)
+			{
+				if (bys.Any(IsElementAppeared))
+				{
+					return;
+				}
+
+				now = DateTime.Now;
+			}
 		}
 	}
 }
