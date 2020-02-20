@@ -108,3 +108,5 @@ C:\Users\QA\WORK\Test\TestProject\TestProject\bin\Debug\netcoreapp3.1\TestProjec
 C:\Users\QA\WORK\Test\TestProject\TestProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll
 C:\Users\QA\WORK\Test\TestProject\TestProject\obj\Debug\netcoreapp3.1\TestProject.dll
 C:\Users\QA\WORK\Test\TestProject\TestProject\obj\Debug\netcoreapp3.1\TestProject.pdb
+C:\Users\QA\WORK\Test\TestProject\TestProject\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+C:\Users\QA\WORK\Test\TestProject\TestProject\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
