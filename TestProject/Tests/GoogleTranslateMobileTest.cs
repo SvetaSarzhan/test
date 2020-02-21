@@ -4,12 +4,12 @@ using TestProject.PageObject;
 
 namespace TestProject.Tests
 {
-    class GoogleTranslateMobileTest :BaseClassMobile
+    class GoogleTranslateMobileTest : BaseClassMobile
     {
-        [Test, Description("")]
+        [Test, Description("Checking translate words from english to ukrainian")]
         public void CheckTranslateFromEnglishToUkraineAndViseVerse()
         {
-            string[] orininalWord = { "dog", "spider", "penguin", "jellyfish", "dolphin", "polar bear", "crocodile" };
+            string[] originalWord = { "dog", "spider", "penguin", "jellyfish", "dolphin", "polar bear", "crocodile" };
 
             string result = string.Empty;
 
@@ -17,16 +17,16 @@ namespace TestProject.Tests
             GoogleTranslatePage googleTranslatePage = new GoogleTranslatePage(ExtendDriver);
             googleTranslatePage.SelectUkrainianLanguage();
 
-            foreach (var item in orininalWord)
+            foreach (var item in originalWord)
             {
                 var translatedWordFromEnglish = googleTranslatePage.TranslateWord(item);
-                googleTranslatePage.ClickTotranslateViseVerse();
+                googleTranslatePage.ClickToTranslateViseVerse();
                 var translatedWordFromUkrainian = googleTranslatePage.TranslateWord(translatedWordFromEnglish);
                 if (!item.Equals(translatedWordFromUkrainian))
                 {
                     result += $"The original english word {item} doesn't translated to ukrainian correctly\n";
                 }
-                googleTranslatePage.ClickTotranslateViseVerse();
+                googleTranslatePage.ClickToTranslateViseVerse();
                 googleTranslatePage.ClickToClearOriginalWord();
             }
             Assert.IsTrue(string.IsNullOrEmpty(result), result);

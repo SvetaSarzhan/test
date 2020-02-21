@@ -20,13 +20,13 @@ namespace TestProject.Tests
             foreach (var item in orininalWord)
             {
                 var translatedWordFromEnglish = googleTranslatePage.TranslateWord(item);
-                googleTranslatePage.ClickTotranslateViseVerse();
+                googleTranslatePage.ClickToTranslateViseVerse();
                 var translatedWordFromUkrainian = googleTranslatePage.TranslateWord(translatedWordFromEnglish);
                 if (!item.Equals(translatedWordFromUkrainian))
                 {
                     result += $"The original english word {item} doesn't translated to ukrainian correctly\n";                   
                 }                
-                googleTranslatePage.ClickTotranslateViseVerse();
+                googleTranslatePage.ClickToTranslateViseVerse();
                 googleTranslatePage.ClickToClearOriginalWord();
             }
             Assert.IsTrue(string.IsNullOrEmpty(result), result);

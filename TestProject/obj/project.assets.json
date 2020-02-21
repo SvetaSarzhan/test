@@ -5125,11 +5125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\QA\\WORK\\Test\\TestProject\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "C:\\Users\\QA\\Desktop\\New folder\\test\\TestProject\\TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "C:\\Users\\QA\\WORK\\Test\\TestProject\\TestProject\\TestProject.csproj",
+      "projectPath": "C:\\Users\\QA\\Desktop\\New folder\\test\\TestProject\\TestProject.csproj",
       "packagesPath": "C:\\Users\\QA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\QA\\WORK\\Test\\TestProject\\TestProject\\obj\\",
+      "outputPath": "C:\\Users\\QA\\Desktop\\New folder\\test\\TestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

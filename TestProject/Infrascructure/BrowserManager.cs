@@ -5,36 +5,11 @@ namespace TestProject.Infrascructure
 {
     internal static class BrowserManager
     {
-        public static Driver GetInstance(bool mobile = false)
+        public static Driver GetInstance(bool mobile, string browser = null)
         {
             Driver instance;
-            switch (Configuration.Browser)
-            {
-                case "Chrome":
-                    instance = new ChromeInstance();
-                    break;
-                case "Firefox":
-                    instance = new FirefoxInstance();
-                    break;
-                case "HeadLess":
-                    instance = new HeadlessInstance();
-                    break;
-                default:
-                    instance = new ChromeInstance();
-                    break;
-            }
-            instance.WebDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(1);
-            return instance;
-        }
-
-        public static Driver GetInstance(string browser, bool mobile = false)
-        {
-            Driver instance;
-            switch (browser)
-            {
-                case "Chrome":
-                    instance = new ChromeInstance(mobile);
-                    break;
+            switch (browser ??= Configuration.Browser)
+            {               
                 case "Firefox":
                     instance = new FirefoxInstance(mobile);
                     break;
@@ -47,6 +22,6 @@ namespace TestProject.Infrascructure
             }
             instance.WebDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(1);
             return instance;
-        }
+        }       
     }
 }

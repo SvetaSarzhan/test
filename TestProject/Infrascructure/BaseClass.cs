@@ -23,7 +23,7 @@ namespace TestProject.Infrascructure
 		{
 			var currentBrowser = TestContext.Parameters.Get("Browser", "Chrome");
 			Logger.Information("Initialize browser");
-			ExtendDriver = BrowserManager.GetInstance();
+			ExtendDriver = BrowserManager.GetInstance(false);
 			Driver = ExtendDriver.WebDriver;
 		}
 
